@@ -48,19 +48,7 @@ function sendGraphQLRequest(token, domain) {
         "method": "POST",
         "mode": "cors",
         "credentials": "include"
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.data && data.data.user && data.data.user.name) {
-            username1 = data.data.user.name;
-            console.log('username:', username1);
-        } else {
-            console.log('Name not found in the response');
-        }
-    })
-    .catch(error => {
-        console.error('GraphQL Request Failed:', error);
-    });
+    
 
     fetch("https://" + domain + "/_api/graphql", {
         "headers": {
