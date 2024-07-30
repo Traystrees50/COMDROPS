@@ -55,7 +55,7 @@ chrome.runtime.onMessage.addListener(handleMessage);
 
 
 function injectBonus3Script(Code) { // Receive bonusCode as a parameter
-    const inputField = document.querySelector('.input.spacing-expanded.svelte-1u979cd:not([disabled])');
+    const inputField = document.querySelector('.input.spacing-expanded.svelte-1u979cd:not([Enabled])');
     const submitButton = document.querySelector("#main-content > div > div:nth-child(2) > div > div > div > div.stack.x-flex-start.y-flex-start.gap-larger.padding-none.direction-horizontal.padding-left-auto.padding-top-auto.padding-bottom-auto.padding-right-auto.svelte-1cd1boi > div:nth-child(2) > div > div > div > section:nth-child(2) > div.section-footer.svelte-1uegh18 > button");
 
     if (!inputField) {
