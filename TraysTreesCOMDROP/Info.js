@@ -39,11 +39,10 @@ function sendGraphQLRequest(token, domain) {
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "x-access-token": token,
+           
             "x-language": "en"
         },
         "referrer": "https://" + domain + "/",
-        "referrerPolicy": "strict-origin-when-cross-origin",
         "body": "{\"query\":\"query UserMeta($name: String, $signupCode: Boolean = false) {\\n  user(name: $name) {\\n    id\\n    name\\n    isMuted\\n    isRainproof\\n    isBanned\\n    createdAt\\n    campaignSet\\n    selfExclude {\\n      id\\n      status\\n      active\\n      createdAt\\n      expireAt\\n    }\\n    signupCode @include(if: $signupCode) {\\n      id\\n      code {\\n        id\\n        code\\n      }\\n    }\\n  }\\n}\\n\",\"variables\":{\"signupCode\":true}}",
         "method": "POST",
         "mode": "cors",
@@ -69,7 +68,7 @@ function sendGraphQLRequest(token, domain) {
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "x-access-token": token,
+            
             "x-language": "en"
         },
         "referrer": "https://" + domain + "/?tab=progress&modal=vip",
