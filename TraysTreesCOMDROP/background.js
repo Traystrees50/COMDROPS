@@ -4,7 +4,7 @@ chrome.action.onClicked.addListener(() => {
   });
 });
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(function(changeInfo, tab) {
   if (changeInfo.status === 'complete') {
     if (tab.url.includes('app=WMClaim') || tab.url.includes('app=CodeClaim')) {
       chrome.tabs.sendMessage(tabId, { type: "Bonus" }, function(response) {
